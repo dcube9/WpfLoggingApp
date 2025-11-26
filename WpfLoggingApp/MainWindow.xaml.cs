@@ -58,8 +58,8 @@ namespace WpfLoggingApp
 
         protected override void OnClosed(EventArgs e)
         {
-            base.OnClosed(e);
             viewModel.LogMessageReceived -= OnLogMessageReceived;
+            base.OnClosed(e);
         }
     }
 }

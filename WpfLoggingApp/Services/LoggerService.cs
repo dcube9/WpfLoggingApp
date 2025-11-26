@@ -1,18 +1,13 @@
-using System;
 using NLog;
+using System;
 
 namespace WpfLoggingApp.Services
 {
     public class LoggerService : ILoggerService
     {
-        private readonly Logger logger;
+        private readonly Logger logger = LogManager.GetCurrentClassLogger();
         
         public event EventHandler<string> LogMessageReceived;
-
-        public LoggerService()
-        {
-            logger = LogManager.GetCurrentClassLogger();
-        }
 
         public void LogInfo(string message)
         {

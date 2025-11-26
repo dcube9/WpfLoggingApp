@@ -3,6 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/DarkTheme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <!-- Ensure window chrome and system brushes respect dark theme -->
+            <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#FF1E1E1E" />
+            <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="#FF2D2D30" />
+            <SolidColorBrush x:Key="{x:Static SystemColors.ControlTextBrushKey}" Color="#FFFFFFFF" />
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

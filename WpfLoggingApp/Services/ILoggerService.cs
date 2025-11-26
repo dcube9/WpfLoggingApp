@@ -10,5 +10,6 @@ namespace WpfLoggingApp.Services
         void LogDebug(string message);
         void LogWarn(string message);
         void LogError(string message);
+        void NotifyLogMessage(string message);
     }
 }

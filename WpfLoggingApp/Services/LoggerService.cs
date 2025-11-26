@@ -34,7 +34,7 @@ namespace WpfLoggingApp.Services
             logger.Error(message);
         }
 
-        internal void RaiseLogMessageReceived(string message)
+        public void NotifyLogMessage(string message)
         {
             LogMessageReceived?.Invoke(this, message);
         }

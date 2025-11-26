@@ -36,8 +36,8 @@ namespace WpfLoggingApp
                 var lines = LogTextBox.Text.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
                 if (lines.Length > 10000)
                 {
-                    var linesToKeep = lines.Length - 10000;
-                    var newText = string.Join(Environment.NewLine, lines, linesToKeep, 10000);
+                    var linesToRemove = lines.Length - 10000;
+                    var newText = string.Join(Environment.NewLine, lines, linesToRemove, 10000);
                     LogTextBox.Text = newText;
                 }
                 

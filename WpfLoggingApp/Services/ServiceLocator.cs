@@ -5,7 +5,7 @@ namespace WpfLoggingApp.Services
 {
     public class ServiceLocator
     {
-        private static ServiceLocator instance;
+        private static readonly Lazy<ServiceLocator> instance = new Lazy<ServiceLocator>(() => new ServiceLocator());
         private readonly Dictionary<Type, object> services;
         private readonly Dictionary<Type, Type> serviceTypes;
 
@@ -19,11 +19,7 @@ namespace WpfLoggingApp.Services
         {
             get
             {
-                if (instance == null)
-                {
-                    instance = new ServiceLocator();
-                }
-                return instance;
+                return instance.Value;
             }
         }
 

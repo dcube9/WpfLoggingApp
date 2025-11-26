@@ -14,10 +14,10 @@ namespace WpfLoggingApp.Logging
             
             try
             {
-                var loggerService = ServiceLocator.Instance.Resolve<ILoggerService>() as LoggerService;
+                var loggerService = ServiceLocator.Instance.Resolve<ILoggerService>();
                 if (loggerService != null)
                 {
-                    loggerService.RaiseLogMessageReceived(logMessage);
+                    loggerService.NotifyLogMessage(logMessage);
                 }
             }
             catch (Exception)
